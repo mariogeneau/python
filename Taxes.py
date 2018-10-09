@@ -23,21 +23,12 @@ class Taxes(object):
         precision = '''%.02f'''
         return float(precision % (self.quebecTaxes() + self.initial_amount))
     # ¬¬¬¬¬¬¬¬¬¬
-        
+
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-# michigan = Taxes(100)
-# precision = '''$%.02f'''
-# print(precision % (michigan.michiganTaxesWithAmount()))
-
-quebec = Taxes(100)
+michigan = Taxes(100)
 precision = '''$%.02f'''
-print(precision % (quebec.quebecTaxesWithAmount()))
+print(precision % (michigan.michiganTaxesWithAmount()))
 
-
-
-
-
-
-
-
-
+# quebec = Taxes(100)
+# precision = '''$%.02f'''
+# print(precision % (quebec.quebecTaxesWithAmount()))
