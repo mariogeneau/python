@@ -1,27 +1,11 @@
-# ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-class MathClass:
-    # ¬¬¬¬¬¬¬¬¬
-    def __init__(self):
-        super().__init__()
-    # ¬¬¬¬¬¬¬¬¬
-    def add(self, arr_nums):
-        sum = 0
-        for num in arr_nums:
-            sum += num
-        return sum
-        # ¬¬¬¬¬¬¬¬¬
-    def multiply(self, arr_nums):
-        product = 1
-        for num in arr_nums:
-            product *= num
-        return product
+from MathClass import MathClass
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 class QuebecTaxes(MathClass):
     # ¬¬¬¬¬¬¬¬¬
     def __init__(self, price_amount):
         MathClass.__init__(self)
         self.price_amount = price_amount
-        self.precision = '''%.02f'''
+        self.precision = '%.02f'
     # ¬¬¬¬¬¬¬¬¬
     def getGST(self):
         value = self.multiply([self.price_amount, 0.05])
@@ -45,9 +29,8 @@ class QuebecTaxes(MathClass):
         grand_total = self.add([taxes, self.price_amount])
         precision = self.precision % (grand_total)
         return precision
-        
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-x = QuebecTaxes(100)
+x = QuebecTaxes(55.67)
 print(f'{x.getTotalTaxesPlusAmount()}$')
 
 
