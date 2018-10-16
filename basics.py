@@ -1,4 +1,19 @@
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+# STANDALONE APP MAC
+
+# from setuptools import setup
+# setup (
+#     app=['first_app.py'],
+#     setup_requires=["py2app"],
+# )
+
+# python3 first_app_build.py py2app
+
+# STANDALONE APP WINDOWS
+
+# pyinstaller --onefile --windowed first_app.py
+
+# ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 # VARIABLES
 
 # my_int = 103204934813
