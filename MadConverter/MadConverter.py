@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
+from ImageClass import ImageClass
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 class Window(Frame):
     # ¬¬¬¬¬¬¬¬¬¬¬¬
@@ -9,6 +10,7 @@ class Window(Frame):
         Frame.__init__(self, master)
         self.master = master
         self.v = IntVar()
+        self.imageClassObj = ImageClass()
         self.init_window()
     # ¬¬¬¬¬¬¬¬¬¬¬¬
     def init_window(self):
@@ -17,12 +19,9 @@ class Window(Frame):
         self.setUpInterface()
     # ¬¬¬¬¬¬¬¬¬¬¬¬
     def setUpInterface(self):
-        image = Image.open("MadConverter/logo.png")
-        photo = ImageTk.PhotoImage(image)
-        label = Label(image=photo)
-        label.image = photo
-        label.pack()
-        label.place(x=40, y=10)
+        image = self.imageClassObj.loadImage()
+        image.pack()
+        image.place(x=40, y=10)
         r1 = Radiobutton(self, text="Celsius", value=1, command=self.temperature, variable=self.v)
         r1.pack()
         r1.place(x=40, y=150)

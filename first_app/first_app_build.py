@@ -1,5 +1,5 @@
 from setuptools import setup
 setup (
-    app=['first_app/first_app.py'],
+    app=['MadNotes/setup.py'],
     setup_requires=["py2app"],
 )
