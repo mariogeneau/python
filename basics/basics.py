@@ -2,16 +2,29 @@
 # STANDALONE APP MAC
 
 # from setuptools import setup
-# setup (
-#     app=['first_app.py'],
-#     setup_requires=["py2app"],
+# 
+# APP = ['MadNotes/MadNotes.py']
+# DATA_FILES = []
+# OPTIONS = {
+#     'argv_emulation': False,
+#     'packages': ['PIL']
+#     }
+# 
+# setup(
+#     app=APP,
+#     data_files=DATA_FILES,
+#     options={'py2app': OPTIONS},
+#     setup_requires=['py2app'],
 # )
 
-# python3 first_app_build.py py2app
+# python3 setup.py py2app
 
 # STANDALONE APP WINDOWS
 
 # pyinstaller --onefile --windowed first_app.py
+
+# import os
+# os.getcwd()
 
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 # VARIABLES
