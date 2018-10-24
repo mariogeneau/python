@@ -35,31 +35,31 @@ class Window(Frame):
         # ===
         message_to_send_label = Label(self.master, text='MESSAGE TO SEND')
         message_to_send_label.config(font=("Courier-Bold", 21))
-        message_to_send_label.grid(row=1, column=0, sticky=W, padx=100, pady=(30, 0))
+        message_to_send_label.grid(row=1, column=0, sticky=W, padx=50, pady=(30, 0))
         # ===
-        self.scroll_message_to_send = tkst.ScrolledText(self.master, wrap=tk.WORD, bg="#FF265D", height=5, width=80, padx=10, pady=10)
-        self.scroll_message_to_send.config(font=("Courier", 21), fg="White")
-        self.scroll_message_to_send.grid(row=2, column=0, padx=100, pady=(5, 0))
+        self.scroll_message_to_send = tkst.ScrolledText(self.master, wrap=tk.WORD, bg="#FF265D", height=4, width=50, padx=10, pady=10)
+        self.scroll_message_to_send.config(font=("Courier", 18), fg="White")
+        self.scroll_message_to_send.grid(row=2, column=0, padx=50, pady=(5, 0))
         # ===
         self.send_button = Button(self.master, text="SEND", command=lambda: self.sendButton(), height=2, width=8)
-        self.send_button.config(font=("Courier-Bold", 21))
-        self.send_button.grid(row=3, column=0, sticky=E, padx=100, pady=(10, 0))
+        self.send_button.config(font=("Courier-Bold", 18))
+        self.send_button.grid(row=3, column=0, sticky=E, padx=50, pady=(10, 0))
         # ===
         timeline_label = Label(self.master, text='TIMELINE')
         timeline_label.config(font=("Courier-Bold", 21))
-        timeline_label.grid(row=4, column=0, sticky=W, padx=100, pady=(30, 0))
+        timeline_label.grid(row=4, column=0, sticky=W, padx=50, pady=(30, 0))
         # ===
-        self.scroll_timeline = tkst.ScrolledText(self.master, wrap=tk.WORD, bg="#FF265D", height=15, width=80, padx=10, pady=10)
-        self.scroll_timeline.config(font=("Courier", 21), fg="White")
-        self.scroll_timeline.grid(row=5, column=0, padx=100, pady=(5, 0))
+        self.scroll_timeline = tkst.ScrolledText(self.master, wrap=tk.WORD, bg="#FF265D", height=10, width=50, padx=10, pady=10)
+        self.scroll_timeline.config(font=("Courier", 18), fg="White")
+        self.scroll_timeline.grid(row=5, column=0, padx=50, pady=(5, 0))
         # ===
         self.reset_button = Button(self.master, text='RESET', command=lambda: self.resetButton(), height=2, width=8)
-        self.reset_button.config(font=("Courier-Bold", 21))
-        self.reset_button.grid(row=6, column=0, sticky=W, padx=100, pady=(10, 50))
+        self.reset_button.config(font=("Courier-Bold", 18))
+        self.reset_button.grid(row=6, column=0, sticky=W, padx=50, pady=(10, 30))
         # ===
         self.update_button = Button(self.master, text='UPDATE', command=lambda: self.updateButton(), height=2, width=8)
-        self.update_button.config(font=("Courier-Bold", 21))
-        self.update_button.grid(row=6, column=0, pady=(10, 50), sticky=E, padx=100)
+        self.update_button.config(font=("Courier-Bold", 18))
+        self.update_button.grid(row=6, column=0, pady=(10, 30), sticky=E, padx=50)
         # ===
     # ¬¬¬¬¬¬¬¬¬¬¬¬
     def sendButton(self):
@@ -99,7 +99,7 @@ class Window(Frame):
         timeline_str_to_return = ""
         for i, date in enumerate(the_dates):
             timeline_str_to_return += f'{date} : \n\n'
-            timeline_str_to_return += f'{the_messages[i]}\n\n------------------------------------------------------------------------\n'
+            timeline_str_to_return += f'{the_messages[i]}\n\n--------------------------------------\n'
         return timeline_str_to_return
     # ¬¬¬¬¬¬¬¬¬¬¬¬
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
