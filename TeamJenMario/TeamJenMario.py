@@ -29,8 +29,8 @@ class Window(Frame):
     # ¬¬¬¬¬¬¬¬¬¬¬¬
     def setUpInterface(self):
         # ===
-        # logo = self.imageObj.loadImage(f'{os.getcwd()}/TeamJenMario/logo.png', 582, 109)
-        logo = self.imageObj.loadImage(f'{os.getcwd()}/logo.png', 582, 109)
+        logo = self.imageObj.loadImage(f'{os.getcwd()}/TeamJenMario/logo.png', 582, 109)
+        # logo = self.imageObj.loadImage(f'{os.getcwd()}/logo.png', 582, 109)
         logo.grid(row=0, column=0, pady=(10, 0))
         # ===
         message_to_send_label = Label(self.master, text='MESSAGE TO SEND')
@@ -109,13 +109,3 @@ app = Window(root)
 root.mainloop()
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-
-
-
-
-
-
-
-
-
-
