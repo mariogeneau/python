@@ -8,6 +8,7 @@ import tkinter.scrolledtext as tkst
 from JsonClass import JsonClass
 import time
 import collections
+import datetime
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 class Window(Frame):
     # ¬¬¬¬¬¬¬¬¬¬¬¬
@@ -53,9 +54,9 @@ class Window(Frame):
         self.scroll_timeline.config(font=("Courier", 18), fg="White")
         self.scroll_timeline.grid(row=5, column=0, padx=50, pady=(5, 0))
         # ===
-        self.reset_button = Button(self.master, text='RESET', command=lambda: self.resetButton(), height=2, width=8)
-        self.reset_button.config(font=("Courier-Bold", 18))
-        self.reset_button.grid(row=6, column=0, sticky=W, padx=50, pady=(10, 30))
+        # self.reset_button = Button(self.master, text='RESET', command=lambda: self.resetButton(), height=2, width=8)
+        # self.reset_button.config(font=("Courier-Bold", 18))
+        # self.reset_button.grid(row=6, column=0, sticky=W, padx=50, pady=(10, 30))
         # ===
         self.update_button = Button(self.master, text='UPDATE', command=lambda: self.updateButton(), height=2, width=8)
         self.update_button.config(font=("Courier-Bold", 18))
@@ -65,8 +66,8 @@ class Window(Frame):
     def sendButton(self):
         self.loadJsonData()
         self.scroll_timeline.delete(1.0, END)
-        localtime = time.asctime(time.localtime(time.time()))
-        self.dict['>>> ' + localtime] = f"MAD - {self.scroll_message_to_send.get('1.0', 'end-1c')}"
+        localtime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.dict['>>> ' + localtime] = f"JEN - {self.scroll_message_to_send.get('1.0', 'end-1c')}"
         self.jsonObj.saveJsonOnline("http://www.mariogeneau.com/projects/teamjenmario/add_to_json.php", self.dict)
         self.loadJsonData()
         self.scroll_message_to_send.delete(1.0, END)
