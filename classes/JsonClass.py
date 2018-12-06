@@ -31,9 +31,9 @@ class JsonClass:
 # Version 1
 
 # from JsonClass import JsonClass
-# jsonClassObj = JsonClass()
-# dict = jsonClassObj.loadjsonFile(path_to_json)
-# jsonClassObj.saveJsonFile(path_to_json, dict_to_save)
-# jsonClassObj.loadJsonFromOnline(url_to_php, dict_to_save)
+# self.jsonClassObj = JsonClass()
+# dict = self.jsonClassObj.loadjsonFile(path_to_json)
+# self.jsonClassObj.saveJsonFile(path_to_json, dict_to_save)
+# self.jsonClassObj.loadJsonFromOnline(url_to_php, dict_to_save)
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬

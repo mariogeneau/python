@@ -20,7 +20,7 @@ class ImageClass:
 # Version 1
 
 # from ImageClass import ImageClass
-# imageObj = ImageClass()
-# anImage = imageObj.loadImage(path_to_image, the_width, the_height)
+# self.imageObj = ImageClass()
+# anImage = self.imageObj.loadImage(path_to_image, the_width, the_height)
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
