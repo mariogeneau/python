@@ -75,7 +75,7 @@ class Window(Frame):
         # ===
         self.listbox = Listbox(Frame2, width=40, height=5, selectmode=BROWSE)
         for i in range(len(self.no_duplicates_dates)):
-            self.listbox.insert(1, f'  {self.no_duplicates_dates[i]} --- {self.sum_calories[i]} Calories')
+            self.listbox.insert(1, f'  {self.no_duplicates_dates[i]} : {self.sum_calories[i]} Calories')
         self.listbox.config(font=("Optima", 16), fg="#000000", selectbackground="#EEEEEE")
         self.listbox.grid(row=0, column=0, sticky=W+E+N+S, padx=20, pady=20)
         self.listbox.bind("<<ListboxSelect>>", self.displaySelection)
@@ -108,7 +108,34 @@ class Window(Frame):
         selection = widget.curselection()
         value = widget.get(selection[0])
         # ===
-        print(value.strip())
+        self.displayCaloriesForDayDetails(value.strip())
+        # ===
+    # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+    def displayCaloriesForDayDetails(self, selection_value):
+        # ===
+        date = selection_value[:10]
+        str_to_display = ""
+        # ===
+        the_dates = list(self.dict.keys())
+        the_values = list(self.dict.values())
+        # ===
+        the_food = []
+        the_calories = []
+        short_dates = []
+        # ===
+        for each_item in the_values:
+            the_calories.append(each_item["CALORIES"])
+            the_food.append(each_item["FOOD"])
+        # ===
+        for each_date in the_dates:
+            short_dates.append(each_date[:10])
+        short_dates = sorted(short_dates)
+        # ===
+        for a in range(len(short_dates)):
+            if date == short_dates[a]:
+                str_to_display += f'{the_food[a]} : {the_calories[a]} \n'
+        tk.messagebox.showinfo(f'DETAILS : {short_dates[a]}', str_to_display)
+        str_to_display = ""
         # ===
     # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
     def parseDict(self):
@@ -130,6 +157,7 @@ class Window(Frame):
         for each_date in self.the_dates:
             self.short_dates.append(each_date[:10])
         self.no_duplicates_dates = list(set(self.short_dates))
+        self.no_duplicates_dates = sorted(self.no_duplicates_dates)
         # ===
         for a in range(len(self.no_duplicates_dates)):
             sum_cal = 0
@@ -141,6 +169,9 @@ class Window(Frame):
         # ===
     # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
     def addItem(self):
+        # ===
+        if self.checkEmptyEntry():
+            return
         # ===
         date = self.dateObj.getDate("%Y-%m-%d %H:%M:%S")
         food_item = self.food_entry.get()
@@ -156,10 +187,15 @@ class Window(Frame):
         self.listbox.delete(0,'end')
         # ===
         for i in range(len(self.no_duplicates_dates)):
-            self.listbox.insert(1, f'  {self.no_duplicates_dates[i]} --- {self.sum_calories[i]} Calories')
+            self.listbox.insert(1, f'  {self.no_duplicates_dates[i]} : {self.sum_calories[i]} Calories')
         # ===
         self.eraseEntries()
         # ===
+    # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+    def checkEmptyEntry(self):
+        if self.food_entry.get() == "" or self.calories_entry.get() == "":
+            tk.messagebox.showinfo("Message...", "Entries Should Not be Empty...")
+            return True
     # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
     def eraseEntries(self):
         # ===
