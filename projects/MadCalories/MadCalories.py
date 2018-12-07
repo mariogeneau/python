@@ -45,7 +45,7 @@ class Window(Frame):
         logo.grid(row=0, column=0, padx=50, pady=(20, 5), sticky=W+E+N+S)
         # ===
         self.the_date = self.dateObj.getDate("%Y-%m-%d %H:%M:%S")
-        self.date_label = Label(self.master, text=f'Date : {self.the_date}', bg='#4c968c', foreground='#7ff4e5')
+        self.date_label = Label(self.master, text=f'Date : {self.the_date} - Goal : 1677', bg='#4c968c', foreground='#7ff4e5')
         self.date_label.grid(row=1, column=0, sticky=W+E+N+S)
         # ===
         Frame1 = Frame(self.master, borderwidth=1, relief="ridge", background="#63bfb3")
@@ -89,7 +89,7 @@ class Window(Frame):
     # ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
     def showTime(self):
         # ===
-        self.date_label["text"]="Date : " + self.dateObj.getDate("%Y-%m-%d %H:%M:%S")
+        self.date_label["text"]="Date : " + self.dateObj.getDate("%Y-%m-%d %H:%M:%S") + " - Goal : 1677"
         # ===
         self.timer = threading.Timer(1, self.showTime)
         self.timer.start()
